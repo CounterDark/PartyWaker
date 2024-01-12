@@ -18,11 +18,12 @@ var menuRouter = require('./routes/Menu/index');
 var app = express();
 
 mongoose.connect(DB_URL)
-  .then(() => console.log('Database connected!'))
-  .catch(err => console.log(err));
-
-load()
-  .then(() => console.log('Collections loaded!'))
+  .then(() => {
+    console.log('Database connected!');
+    load()
+      .then(() => console.log('Collections loaded!'))
+      .catch(err => console.log(err));
+  })
   .catch(err => console.log(err));
 
 // view engine setup
