@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "strict": ["error", "global"],
+    "no-unused-vars": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  }
+}
