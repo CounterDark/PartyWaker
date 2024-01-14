@@ -1,5 +1,5 @@
 'use strict';
-const collectionManager = require('./Collections/CollectionManager');
+const collectionManager = require('./Collections/collectionManager');
 
 async function loadCollections() {
     await collectionManager.loadCollections();
