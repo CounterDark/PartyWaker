@@ -2,9 +2,13 @@ doctype html
 html
   head
     title= 'PartyWaker'
+    include ../bootstrap
     link(rel='stylesheet', href='/stylesheets/Menu/style.css')
   body 
-    block header 
-    block content
-    block footer
+    div(class='header')
+      block header 
+    div(class='content')
+      block content
+    div(class='footer')
+      block footer
   script(src='/javascripts/Menu/script.js')

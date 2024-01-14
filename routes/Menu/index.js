@@ -8,6 +8,8 @@ router.get('/', function (req, res) {
   res.render('Menu/menu', { title: 'Menu' });
 });
 
-
+router.get('/notImplementedYet', function (req, res) {
+  res.render('notImplementedYet', {});
+});
 
 module.exports = router;

@@ -28,5 +28,5 @@ function getNextQuestion() {
     });
 }
 //#endregion
-document.getElementById("nextButton").addEventListener("click", getNextQuestion);
+document.getElementById("nextButton")?.addEventListener("click", getNextQuestion);
 //#region events
