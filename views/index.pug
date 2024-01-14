@@ -1,5 +1,6 @@
 extends defaultLayout
 
 block content
-  h1= title
-  button(id="startButton") Start
+  h1(id="title")= title
+  p(id="describtion") Welcome to #{title}
+  button(id="startButton", class="btn btn-dark btn-lg") Start

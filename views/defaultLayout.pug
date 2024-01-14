@@ -2,7 +2,13 @@ doctype html
 html
   head
     title= 'PartyWaker'
-    link(rel='stylesheet', href=css)
+    include bootstrap
+    link(rel='stylesheet', href='/stylesheets/style.css')
   body 
-  block content
+    div(class='header')
+      block header 
+    div(class='content')
+      block content
+    div(class='footer')
+      block footer
   script(src='/javascripts/script.js')
