@@ -3,7 +3,7 @@
 const Game = require('../Game/Game');
 const controllerManager = require('../Game/Managers/controllerManager');
 const gameManager = require('../Game/Managers/gameManager');
-const { generateMatchId } = require('./Utils/matchIdGenerator');
+const { generateMatchId } = require('./utils/matchIdGenerator');
 
 function createMatch(type) {
     const matchId = generateMatchId(type);
