@@ -9,4 +9,15 @@ const QuestionSchema = new Schema({
 
 const QuestionModel = mongoose.model('Question', QuestionSchema);
 
+
+QuestionModel.load = function () {
+    return new Promise((resolve, reject) => {
+        QuestionModel.find({}).exec().then((questions) => {
+            resolve(questions.map((question) => question.toObject()));
+        }).catch((err) => {
+            reject(err);
+        });
+    });
+};
+
 module.exports = QuestionModel;

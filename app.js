@@ -11,9 +11,12 @@ const { load } = require('./App/loader');
 
 const DB_URL = process.env.DB_URL || '';
 
-// import routers
+//#region import routers
 var indexRouter = require('./routes/index');
 var menuRouter = require('./routes/Menu/index');
+var gameRouter = require('./routes/Game/index');
+var matchMakerRouter = require('./routes/MatchMaker/index');
+//#endregion
 
 var app = express();
 
@@ -37,23 +40,26 @@ const corsOptions = {
 }
 
 app.use(cors());
-app.use(logger('dev')); 
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routers setup
+//#region Routers setup
 app.use('/', indexRouter);
 app.use('/menu', menuRouter);
+app.use('/game', gameRouter);
+app.use('/match-maker', matchMakerRouter);
+//#endregion
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -63,7 +69,7 @@ app.use(function(err, req, res) {
   res.render('error');
 });
 
-process.on('SIGINT',  async () => {
+process.on('SIGINT', async () => {
   try {
     await mongoose.connection.close();
     console.log('Mongoose default connection disconnected through app termination');

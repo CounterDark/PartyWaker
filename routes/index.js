@@ -3,8 +3,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'PartyWaker', css: '/stylesheets/style.css', script: '/javascripts/script.js'});
+router.get('/', function (req, res) {
+  res.render('index', { title: 'PartyWaker' });
 });
 
 module.exports = router;
